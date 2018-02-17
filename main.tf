@@ -44,3 +44,7 @@ resource "aws_instance" "inst2" {
   key_name      = "${aws_key_pair.main.id}"
   subnet_id     = "${module.networking.az-subnet-id-mapping["subnet2"]}"
 }
+
+output "az-subnet-id-mapping" {
+  value = "${module.networking.az-subnet-id-mapping}"
+}
