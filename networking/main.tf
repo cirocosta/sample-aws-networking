@@ -4,7 +4,8 @@
 # up to 10.0.255.254. Essentially we can host 65k IPs in
 # that range. 
 resource "aws_vpc" "main" {
-  cidr_block = "${var.cidr}"
+  cidr_block           = "${var.cidr}"
+  enable_dns_hostnames = true
 }
 
 # Internet gateway to give our VPC access to the outside world
